@@ -1,0 +1,102 @@
+Cuerpo 1
+	Longitud 65 cm 
+	Diametro exterior 7.7 cm
+	Diametro interior 7.5 cm 
+	Espesor 0.1
+	Material Fibra de Carbono
+Cuerpo 2
+	Longitud 65 cm 
+	Diametro exterior 7.7 cm
+	Diametro interior 7.5 cm 
+	Espesor 0.1
+	Material Fibra de Carbono
+Ojiva 
+	Longitud 25 cm
+	Diametro de la base 7.7 cm
+	Espesor de la pared 0.2 cm 
+	Material PLA 
+Acoplamiento 
+	Diametro 7.5 cm
+	Longitud 7.5 cm 
+	Espesor 0.01 cm 
+Masa 
+	Masa 5 gr 
+	Localización 10 cm de Ojiva
+Aletas
+	Número 4
+	Longitud de la línea base 10 cm 
+	Longitud del borde superior 6 cm
+	Altura 9 cm 
+	Desplazamiento borde superior 7 cm 
+	Espesor 0.3 cm 
+	Material MDF 
+Raíz de aleta
+	Longitud de la raíz 10 cm 
+	Altura de la raíz .5 cm 
+Tubo Interior 
+	Longitud 15.4 cm 
+	Diametro exterior 4.2 cm 
+	Diametro interior 3.4 cm 
+	Espesor 0.4
+	Material Fibra de Carbono
+Anillo de Centrado 
+	Espesor 0.7 cm 
+	Diametro exterior 7.5 cm 
+	Diametro interior 4.2 cm 
+	Material MDF
+Tirante de Sujeción
+	Longitud 305 cm
+	Material Nylon trenzado 
+	Localización -19 cm
+Paracaídas
+	Diametro 150 cm
+	Material Ripstop nylon 
+	Cuerdas
+	Número 8 
+	Longitud 390 cm
+	Material Nylon trenzado 
+	Localización -40 cm 
+	Despliegue en Apogeo 
+Motor 
+	H73J-6
+Rail Button
+	Diametro exterior 0.97 cm
+	Diametro interior 0.8 cm
+	Altura de la base 0.2 cm
+	Altura de la brida 0.2 cm
+	Altura total 0.97 cm 
+	Material Delrin
+Acoplador 
+	Longitud 26 cm
+	Diametro exterior 7.7 cm 
+	Diametro interior 7.7 cm
+	Espesor 0
+	Material Fibra de Carbono
+Anillo de Centrado (Acoplador)
+	Espesor 0.7 cm 
+	Diametro exterior 7.5 cm
+	Diametro interior 0 cm
+	Material MDF
+Masa (Flight Computer)
+	Masa 100 gr
+	Densidad 0.113 g/cm3
+	Longitud 20 cm
+	Diametro 7.5 cm
+Datos 
+	Longitud 157 cm
+	Diametro maximo 7.7 cm
+	Masa sin motores 1143 g
+	Masa con motores 1452 g
+	Estabilidad 3.5
+	CG 101 cm
+	CP 128 cm
+Simulación
+	Velocidad al abandono de la guía 9.68 m/s
+	Apogeo 511 m 
+	Velocidad al abrir paracaidas 5.38 m/s
+	Optimum delay 7.77 s
+	Velocidad máxima 101 m/s
+	Aceleración máxima 56.2 m/s cuadrados
+	Tiempo hasta el apogeo 10.7 s
+	Duración del vuelo 143 s
+	Velocidad de llegada a tierra 3.83 m/s
