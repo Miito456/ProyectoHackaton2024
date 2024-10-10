@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProyectoHackathon</string>
+    <string name="nombreBoton">Crear db</string>
 </resources>
