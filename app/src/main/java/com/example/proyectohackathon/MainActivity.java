@@ -24,7 +24,7 @@ import com.example.proyectohackathon.db.dbProductos;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnCrear, btnInsert, btnSelect;
+    Button btnCrear, btnInsert, btnSelect,btnPrincipal,btnLogin;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -39,6 +39,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Inserts();
+        btnLogin = (Button) findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in2 = new Intent(MainActivity.this,LogIn.class);
+                startActivity(in2);
+            }
+        });
+        btnPrincipal = findViewById(R.id.btnPrincipal);
+        btnPrincipal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(MainActivity.this,VentanaPrincipal.class);
+                startActivity(in);
+            }
+        });
         btnCrear =findViewById(R.id.btnCrear);
 
         btnCrear.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         btnInsert = (Button) findViewById(R.id.btnInsert);
 
@@ -101,12 +118,10 @@ public class MainActivity extends AppCompatActivity {
         dbClientes inC1 = new dbClientes(MainActivity.this);
         Long id = inC1.insertarClientes("caroalvarado", "Greenbay12","Caro Alvarado",1);
         if(id >0){
-                    Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
-                }
-//        dbProductos inP1 = new dbProductos(MainActivity.this);
-//        inP1.insertarProductos();
+            Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
+        }
     }
 
 

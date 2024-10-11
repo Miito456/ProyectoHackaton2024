@@ -18,8 +18,9 @@ import com.example.proyectohackathon.db.DbHelper;
 
 public class LogIn extends AppCompatActivity {
     private RelativeLayout btnIniciar;
-    private TextView user;
+   private TextView user;
     private TextView password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,25 +32,26 @@ public class LogIn extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    DbHelper dbHelper = new DbHelper(LogIn.this);
-                    SQLiteDatabase db = dbHelper.getWritableDatabase();
-                    Clientes cliente = null;
-                    Cursor cursorClientes = null;
+                DbHelper dbHelper = new DbHelper(LogIn.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                Clientes cliente = null;
+                Cursor cursorClientes = null;
 
-                    cursorClientes = db.rawQuery("SELECT * FROM "+TABLE_CLIENTES+" WHERE User = '"+user.getText()+"'", null);
+                cursorClientes = db.rawQuery("SELECT * FROM "+TABLE_CLIENTES+" WHERE User = '"+user.getText()+"'", null);
 
-                    if(cursorClientes.moveToFirst()){
-                            if(cursorClientes.getString(2)== password.getText()){
-                                Intent intent = new Intent(LogIn.this, VentanaPrincipal.class);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(LogIn.this,"Contraseña Incorrecta, ¡Intenta de Nuevo!",Toast.LENGTH_SHORT).show();
-                            }
-                        }else{
-                            Toast.makeText(LogIn.this, "Perfil no Registrado, ¡Intenta de Nuevo!", Toast.LENGTH_SHORT).show();
+                if(cursorClientes.moveToFirst()){
+                    if(cursorClientes.getString(2).equals(password.getText().toString())){
+
+                        Intent intent = new Intent(LogIn.this, VentanaPrincipal.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(LogIn.this,"Contraseña Incorrecta, ¡Intenta de Nuevo!",Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(LogIn.this, "Perfil no Registrado, ¡Intenta de Nuevo!", Toast.LENGTH_SHORT).show();
 
 
-                        }}
+                }}
         });
     }
 
