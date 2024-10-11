@@ -22,15 +22,14 @@ public class dbEmpresas extends DbHelper{
         this.context = context;
     }
 
-    public long insertarEmpresas(String Nombre, Byte Logo, String Descripcion, String Ubicacion){
+    public long insertarEmpresas(String Nombre, String Descripcion, String Ubicacion){
         long id = 0;
         try {
             DbHelper dbHelper = new DbHelper(context);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("Nombre", Nombre);
-            values.put("Logo", Logo);
-            values.put("Descripcion", Nombre);
+            values.put("Descripción", Descripcion);
             values.put("Ubicacion", Ubicacion);
 
             id = db.insert(TABLE_EMPRESAS, null, values);

@@ -18,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.proyectohackathon.Entidades.Clientes;
 import com.example.proyectohackathon.db.DbHelper;
 import com.example.proyectohackathon.db.dbClientes;
+import com.example.proyectohackathon.db.dbEmpresas;
+import com.example.proyectohackathon.db.dbProductos;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        Inserts();
         btnCrear =findViewById(R.id.btnCrear);
 
         btnCrear.setOnClickListener(new View.OnClickListener() {
@@ -57,13 +60,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
-                dbClientes insert = new dbClientes(MainActivity.this);
-                Long id = insert.insertarClientes("User", "User", "Prueba Hackaton", 1);
-                if(id >0){
-                    Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
-                }
+//                dbClientes insert = new dbClientes(MainActivity.this);
+//                Long id = insert.insertarClientes("User", "User", "Prueba Hackaton", 1);
+//                if(id >0){
+//                    Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
+//                }else{
+//                    Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
+//                }
+
             }
         });
 
@@ -90,6 +94,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void Inserts(){
+        dbEmpresas inE1 = new dbEmpresas(MainActivity.this);
+        Long id = inE1.insertarEmpresas("Los Canastos", "Venta a granel de productos naturales","Juarez #103");
+        if(id >0){
+                    Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
+                }
+//        dbProductos inP1 = new dbProductos(MainActivity.this);
+//        inP1.insertarProductos();
     }
 
 

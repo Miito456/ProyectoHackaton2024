@@ -70,4 +70,33 @@ public class dbProductos extends DbHelper{
         cursorProductos.close();
         return listaProductos;
     }
+
+    public ArrayList<Productos> ObtenerProductosPorId(int i){
+        DbHelper dbHelper = new DbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ArrayList<Productos> listaProductos = new ArrayList<>();
+        Productos Producto = null;
+        Cursor cursorProductos = null;
+
+        cursorProductos = db.rawQuery("SELECT * FROM "+TABLE_PRODUCTOS+" WHERE idProductos = "+i+" ", null);
+
+        if(cursorProductos.moveToFirst()){
+            do{
+                Producto = new Productos();
+                Producto.setIdProducto(cursorProductos.getInt(0));
+                Producto.setNombre(cursorProductos.getString(1));
+                Producto.setTalla(cursorProductos.getString(2));
+                Producto.setColor(cursorProductos.getString(3));
+                Producto.setCosto(cursorProductos.getInt(4));
+                Producto.setNivel(cursorProductos.getInt(5));
+                Producto.setPersonalizable(cursorProductos.getString(6));
+
+
+
+                listaProductos.add(Producto);
+            }while(cursorProductos.moveToNext());
+        }
+        cursorProductos.close();
+        return listaProductos;
+    }
 }
