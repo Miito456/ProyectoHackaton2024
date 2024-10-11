@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo de la tarjeta -->
+    <solid android:color="#9AB092" />
+
+    <!-- Esquinas redondeadas -->
+    <corners android:radius="12dp" />
+
+    <!-- Sombra -->
+    <elevation android:value="4dp" />
+</shape>

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">ProyectoHackathon</string>
     <string name="nombreBoton">Crear db</string>
+    <string name="clickdgo">ClickDgo</string>
+    <string name="hola_">Hola, ****</string>
+    <string name="encuentra_l">Encuentra lo que estas buscando</string>
+    <!-- strings.xml -->
+    <string name="para_t_">Para tí</string>
+    <string name="descubrir">Descubrir</string>
 </resources>
