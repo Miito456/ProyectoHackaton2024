@@ -54,7 +54,7 @@ public class dbProductos extends DbHelper{
         if(cursorProductos.moveToFirst()){
             do{
                 Producto = new Productos();
-                Producto.setIdProducto(cursorProductos.getInt(0));
+                Producto.setIdEmpresa(cursorProductos.getInt(0));
                 Producto.setNombre(cursorProductos.getString(1));
                 Producto.setTalla(cursorProductos.getString(2));
                 Producto.setColor(cursorProductos.getString(3));
@@ -71,31 +71,61 @@ public class dbProductos extends DbHelper{
         return listaProductos;
     }
 
-    public ArrayList<Productos> ObtenerProductosPorId(int i){
+//    public ArrayList<Productos> ObtenerProductosPorId(int i){
+//        DbHelper dbHelper = new DbHelper(context);
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//        ArrayList<Productos> listaProductos = new ArrayList<>();
+//        Productos Producto = null;
+//        Cursor cursorProductos = null;
+//
+//        cursorProductos = db.rawQuery("SELECT * FROM "+TABLE_PRODUCTOS+" WHERE idProducto = "+i+" ", null);
+//
+//        if(cursorProductos.moveToFirst()){
+//            do{
+//                Producto = new Productos();
+//                Producto.setIdProducto(cursorProductos.getInt(0));
+//                Producto.setNombre(cursorProductos.getString(1));
+//                Producto.setTalla(cursorProductos.getString(2));
+//                Producto.setColor(cursorProductos.getString(3));
+//                Producto.setCosto(cursorProductos.getInt(4));
+//                Producto.setNivel(cursorProductos.getInt(5));
+//                Producto.setPersonalizable(cursorProductos.getString(6));
+//
+//
+//
+//                listaProductos.add(Producto);
+//            }while(cursorProductos.moveToNext());
+//        }
+//        cursorProductos.close();
+//        return listaProductos;
+//    }
+
+    public ArrayList<Productos> ObtenerProductosPorId(int i) {
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ArrayList<Productos> listaProductos = new ArrayList<>();
-        Productos Producto = null;
-        Cursor cursorProductos = null;
+        Productos producto = null;
 
-        cursorProductos = db.rawQuery("SELECT * FROM "+TABLE_PRODUCTOS+" WHERE idProductos = "+i+" ", null);
+        // Usa una consulta preparada para evitar inyecciones SQL
+        String query = "SELECT * FROM " + TABLE_PRODUCTOS + " WHERE idProducto = ?";
+        Cursor cursorProductos = db.rawQuery(query, new String[]{String.valueOf(i)});
 
-        if(cursorProductos.moveToFirst()){
-            do{
-                Producto = new Productos();
-                Producto.setIdProducto(cursorProductos.getInt(0));
-                Producto.setNombre(cursorProductos.getString(1));
-                Producto.setTalla(cursorProductos.getString(2));
-                Producto.setColor(cursorProductos.getString(3));
-                Producto.setCosto(cursorProductos.getInt(4));
-                Producto.setNivel(cursorProductos.getInt(5));
-                Producto.setPersonalizable(cursorProductos.getString(6));
+        if (cursorProductos.moveToFirst()) {
+            do {
+                producto = new Productos();
+                producto.setIdProducto(cursorProductos.getInt(0));
+                producto.setIdEmpresa(cursorProductos.getInt(1));
+                producto.setNombre(cursorProductos.getString(2));
+                producto.setTalla(cursorProductos.getString(3));
+                producto.setColor(cursorProductos.getString(4));
+                producto.setCosto(cursorProductos.getInt(5));
+                producto.setNivel(cursorProductos.getInt(6));
+                producto.setPersonalizable(cursorProductos.getString(7));
 
-
-
-                listaProductos.add(Producto);
-            }while(cursorProductos.moveToNext());
+                listaProductos.add(producto);
+            } while (cursorProductos.moveToNext());
         }
+
         cursorProductos.close();
         return listaProductos;
     }

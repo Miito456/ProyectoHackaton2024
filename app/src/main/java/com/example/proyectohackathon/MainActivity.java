@@ -24,7 +24,7 @@ import com.example.proyectohackathon.db.dbProductos;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnCrear, btnInsert, btnSelect;
+    Button btnCrear, btnInsert, btnSelect,btnPrincipal;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -39,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Inserts();
+        btnPrincipal = findViewById(R.id.btnPrincipal);
+        btnPrincipal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(MainActivity.this,VentanaPrincipal.class);
+                startActivity(in);
+            }
+        });
         btnCrear =findViewById(R.id.btnCrear);
 
         btnCrear.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         btnInsert = (Button) findViewById(R.id.btnInsert);
 
@@ -97,15 +106,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Inserts(){
-        dbEmpresas inE1 = new dbEmpresas(MainActivity.this);
-        Long id = inE1.insertarEmpresas("Los Canastos", "Venta a granel de productos naturales","Juarez #103");
+        dbProductos inP1 = new dbProductos(MainActivity.this);
+        Long id = inP1.insertarProductos(2,"Barrita Energetica",null,null,30,1,"No");
         if(id >0){
-                    Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
-                }
-//        dbProductos inP1 = new dbProductos(MainActivity.this);
-//        inP1.insertarProductos();
+            Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
+        }
+
     }
 
 

@@ -26,6 +26,9 @@
 
         <!-- Otras actividades -->
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
