@@ -24,7 +24,7 @@ import com.example.proyectohackathon.db.dbProductos;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnCrear, btnInsert, btnSelect,btnPrincipal,btnLogin;
+    Button btnCrear, btnInsert, btnSelect,btnPrincipal;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -39,14 +39,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Inserts();
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in2 = new Intent(MainActivity.this,LogIn.class);
-                startActivity(in2);
-            }
-        });
         btnPrincipal = findViewById(R.id.btnPrincipal);
         btnPrincipal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,14 +106,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Inserts(){
-
-        dbClientes inC1 = new dbClientes(MainActivity.this);
-        Long id = inC1.insertarClientes("caroalvarado", "Greenbay12","Caro Alvarado",1);
+        dbProductos inP1 = new dbProductos(MainActivity.this);
+        Long id = inP1.insertarProductos(2,"Barrita Energetica",null,null,30,1,"No");
         if(id >0){
             Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
         }
+
     }
 
 
