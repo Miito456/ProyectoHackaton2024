@@ -8,7 +8,7 @@ public class ProductoTipos {
     public int getIdProductoTipos() {
         return idProductoTipos;
     }
-
+//F
     public void setIdProductoTipos(int idProductoTipos) {
         this.idProductoTipos = idProductoTipos;
     }

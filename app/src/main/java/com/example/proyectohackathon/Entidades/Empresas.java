@@ -10,6 +10,7 @@ public class Empresas {
 
     public int getIdEmpresa() {
         return idEmpresa;
+        //f
     }
 
     public void setIdEmpresa(int idEmpresa) {

@@ -46,7 +46,7 @@ public class dbEmpresas extends DbHelper{
         ArrayList<Empresas> listaEmpresas = new ArrayList<>();
         Empresas Empresa = null;
         Cursor cursorEmpresas = null;
-
+//F
         cursorEmpresas = db.rawQuery("SELECT * FROM "+TABLE_EMPRESAS, null);
 
         if(cursorEmpresas.moveToFirst()){

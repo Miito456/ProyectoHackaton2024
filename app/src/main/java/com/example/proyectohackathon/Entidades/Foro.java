@@ -11,6 +11,7 @@ public class Foro {
         return idForo;
     }
 
+
     public void setIdForo(int idForo) {
         this.idForo = idForo;
     }

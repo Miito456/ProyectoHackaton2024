@@ -4,7 +4,6 @@ public class ClienteTipos {
     private  int idClienteTipos;
     private int idCliente;
     private String Tipo;
-
     public int getIdClienteTipos() {
         return idClienteTipos;
     }

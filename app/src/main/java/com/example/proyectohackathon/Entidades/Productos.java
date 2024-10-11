@@ -9,7 +9,7 @@ public class Productos {
     private int Costo;
     private int Nivel;
     private String Personalizable;
-
+//F
     public int getIdProducto() {
         return idProducto;
     }

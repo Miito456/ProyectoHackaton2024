@@ -6,7 +6,6 @@ public class Clientes {
     private String Password;
     private int Nivel;
 
-
     public int getIdCliente() {
         return idCliente;
     }

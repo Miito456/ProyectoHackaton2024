@@ -30,7 +30,7 @@ public class dbClienteTipos extends DbHelper{
             values.put("Tipo", Tipo);
 
 
-            id = db.insert(TABLE_CLIENTE_TIPOS, null, values);
+            id = db.insert(TABLE_CLIENTETIPOS, null, values);
         }catch (Exception ex){
             ex.toString();
         }
@@ -44,7 +44,7 @@ public class dbClienteTipos extends DbHelper{
         ClienteTipos ClienteTipo = null;
         Cursor cursorClienteTipos = null;
 
-        cursorClienteTipos = db.rawQuery("SELECT * FROM "+TABLE_CLIENTE_TIPOS, null);
+        cursorClienteTipos = db.rawQuery("SELECT * FROM "+TABLE_CLIENTETIPOS, null);
 
         if(cursorClienteTipos.moveToFirst()){
             do{

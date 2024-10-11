@@ -6,7 +6,6 @@ public class Carrito {
     private int idProducto;
     private String Personalizacion;
     private String Color;
-
     public int getIdCarrito() {
         return idCarrito;
     }
