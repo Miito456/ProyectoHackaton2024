@@ -34,7 +34,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "idEmpresa INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "Nombre TEXT NOT NULL," +
                 "Descripción TEXT NOT NULL," +
-                "Ubicacion NOT NULL)");
+                "Ubicacion TEXT NOT NULL)");
 
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PRODUCTOS + " (" +
