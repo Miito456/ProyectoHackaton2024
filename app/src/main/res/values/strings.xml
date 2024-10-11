@@ -9,7 +9,7 @@
     <string name="descubrir">Descubrir</string>
 
     <string name="iniciar_ses">Iniciar Sesi\u00C3\u00B3n</string> <!-- El texto contiene el carácter especial Ó -->
-    <string name="email">Email</string>
+    <string name="user">User</string>
     <string name="password">Contraseña</string>
     <string name="email_ejemp">Email@ejemplo.com</string>
     <string name="iniciar_sesion">Iniciar sesión</string>

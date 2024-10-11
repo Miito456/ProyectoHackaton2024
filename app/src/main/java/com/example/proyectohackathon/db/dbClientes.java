@@ -16,12 +16,13 @@ public class dbClientes extends DbHelper{
     Context context;
 
 
+
     public dbClientes(@Nullable Context context) {
         super(context);
         this.context = context;
     }
 
-    public long insertarClientes(String User, String Password, String Nombre, int Nivel){
+    public long insertarClientes(String User, String Password, String Nombre, int Nivel) {
         long id = 0;
         try {
             DbHelper dbHelper = new DbHelper(context);
@@ -33,7 +34,7 @@ public class dbClientes extends DbHelper{
             values.put("Nivel", Nivel);
 
             id = db.insert(TABLE_CLIENTES, null, values);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.toString();
         }
         return id;
@@ -62,4 +63,5 @@ public class dbClientes extends DbHelper{
         cursorClientes.close();
         return listaClientes;
     }
+
 }

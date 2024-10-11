@@ -97,8 +97,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Inserts(){
-        dbEmpresas inE1 = new dbEmpresas(MainActivity.this);
-        Long id = inE1.insertarEmpresas("Los Canastos", "Venta a granel de productos naturales","Juarez #103");
+
+        dbClientes inC1 = new dbClientes(MainActivity.this);
+        Long id = inC1.insertarClientes("caroalvarado", "Greenbay12","Caro Alvarado",1);
         if(id >0){
                     Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
                 }else{
