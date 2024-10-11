@@ -10,7 +10,7 @@ public class LogIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in); // Tu layout para la ventana de login
 
-        // Lógica para el login podría ir aquí
+
     }
 
     // Este método podría ser llamado después de una validación exitosa
