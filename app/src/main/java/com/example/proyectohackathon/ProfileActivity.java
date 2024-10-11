@@ -1,19 +1,30 @@
 package com.example.proyectohackathon;
 
+
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Locale;
+
 public class ProfileActivity extends AppCompatActivity {
+
+    private Button changeLanguageButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile); // Asegúrate de tener este layout creado.
+        setContentView(R.layout.activity_profile);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -39,5 +50,30 @@ public class ProfileActivity extends AppCompatActivity {
                 return false;
             }
         });
-        }
+
+        changeLanguageButton = findViewById(R.id.btnIdioma);
+
+        // Listener para el botón de cambio de idioma
+        changeLanguageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cambiar idioma a español (puedes cambiarlo por otro idioma)
+                setLocale("en");
+            }
+        });
     }
+
+    // Método para cambiar el idioma
+    private void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+        // Reiniciar la actividad para aplicar los cambios
+        Intent refresh = new Intent(this, ProfileActivity.class);
+        startActivity(refresh);
+        finish();
+    }
+}

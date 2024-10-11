@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,6 +28,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Overlay para el filtro de daltonismo -->
+    <View
+        android:id="@+id/colorblindOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#80000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <View
         android:id="@+id/rectangle_"
         android:layout_width="430dp"
@@ -44,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
         android:layout_marginTop="68dp"
-        android:text="ClickDGO"
+        android:text="@string/clickdgo"
         android:textColor="#6B705C"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -70,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Nombre Usuario"
+        android:text="@string/user_name"
         android:textColor="#000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -84,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Platino"
+        android:text="@string/membership_type"
         android:textColor="#0a0a0a"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/userName"
@@ -116,7 +127,7 @@
                 android:id="@+id/infoTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Información General"
+                android:text="@string/info_title"
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -126,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Nombre"
+                android:text="@string/name_title"
                 android:textColor="#000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -136,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Raul Gonzales"
+                android:text="@string/val_nom"
                 android:textColor="#0a0a0a"
                 android:textSize="14sp" />
 
@@ -145,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Email"
+                android:text="@string/email_title"
                 android:textColor="#000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -155,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="valEma"
+                android:text="@string/val_ema"
                 android:textColor="#0a0a0a"
                 android:textSize="14sp" />
 
@@ -164,7 +175,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Compras realizadas"
+                android:text="@string/compras_title"
                 android:textColor="#000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -174,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="valCompras"
+                android:text="@string/val_compras"
                 android:textColor="#0a0a0a"
                 android:textSize="14sp" />
 
@@ -183,7 +194,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Puntos ganados"
+                android:text="@string/puntos_title"
                 android:textColor="#000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -193,8 +204,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="valPuntos"
-                android:textColor="#8E9295"
+                android:text="@string/val_puntos"
+                android:textColor="#0a0a0a"
                 android:textSize="14sp" />
 
             <TextView
@@ -202,49 +213,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Aportaciones"
-                android:textColor="#6B705C"
+                android:text="@string/aportaciones_title"
+                android:textColor="#000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/valAporta"
+                android:id="@+id/valAportaciones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="valAporta"
-                android:textColor="#8E9295"
+                android:text="@string/val_aporta"
+                android:textColor="#0a0a0a"
                 android:textSize="14sp" />
 
-            <!-- Botón de privacidad -->
+            <!-- Botones -->
             <Button
+
                 android:id="@+id/btnPrivacidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Privacidad"
-                android:backgroundTint="#597051"
-                android:textColor="#FEFEFE" />
+                android:text="@string/privacy_button"
+                android:backgroundTint="#06a77d"
+                android:textColor="#FEFEFE"/>
 
-            <!-- Botón de accesibilidad -->
             <Button
-                android:id="@+id/btnAccesibilidad"
+
+            android:id="@+id/colorblindFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colorblind_button"
+            android:backgroundTint="#06a77d"
+            android:textColor="#fff"
+                />
+            <Button
+
+                android:id="@+id/btnIdioma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Accesibilidad"
-                android:backgroundTint="#597051"
-                android:textColor="#FEFEFE" />
+                android:text="@string/change_language_button"
+                android:backgroundTint="#06a77d"
+                android:textColor="#FEFEFE"/>
 
-            <!-- Botón de cerrar sesión -->
             <Button
-                android:id="@+id/btnCerrarSesion"
+                android:id="@+id/logoutButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cerrar Sesión"
-                android:backgroundTint="#597051"
-                android:textColor="#FEFEFE" />
+                android:layout_marginTop="16dp"
+                android:text="@string/logout_button"
+                android:backgroundTint="#06A77D"
+                android:textColor="#FFF" />
         </LinearLayout>
     </ScrollView>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -260,7 +280,6 @@
         app:itemActiveIndicatorStyle="@style/IndicatorStyle"
         app:itemIconPadding="8dp"
         app:itemHorizontalTranslationEnabled="true"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

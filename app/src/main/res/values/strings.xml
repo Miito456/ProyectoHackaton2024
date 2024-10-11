@@ -1,18 +1,34 @@
 <resources>
     <string name="app_name">ProyectoHackathon</string>
-    <string name="nombreBoton">Crear db</string>
+    <string name="nombreBoton">Bd</string>
+
     <string name="clickdgo">ClickDgo</string>
-    <string name="hola_">Hola, ****</string>
+    <string name="hola_">Hola, Raul</string>
     <string name="encuentra_l">Encuentra lo que estas buscando</string>
-    <!-- strings.xml -->
     <string name="para_t_">Para tí</string>
     <string name="descubrir">Descubrir</string>
-
-    <string name="iniciar_ses">Iniciar Sesi\u00C3\u00B3n</string> <!-- El texto contiene el carácter especial Ó -->
+    <string name="iniciar_ses">Iniciar Sesión</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="email_ejemp">Email@ejemplo.com</string>
     <string name="iniciar_sesion">Iniciar sesión</string>
+        <string name="user_name">Nombre Usuario</string>
+        <string name="membership_type">Platino</string>
+        <string name="info_title">Información General</string>
+        <string name="name_title">Nombre</string>
+        <string name="val_nom">Raul Gonzales</string>
+        <string name="email_title">Email</string>
+        <string name="val_ema">raulgonzales@gmail.com</string>
+        <string name="compras_title">Compras realizadas</string>
+        <string name="val_compras">33</string>
+        <string name="puntos_title">Puntos ganados</string>
+        <string name="val_puntos">88</string>
+        <string name="aportaciones_title">Aportaciones</string>
+        <string name="val_aporta">120</string>
+        <string name="privacy_button">Privacidad</string>
+        <string name="colorblind_button">Modo daltonismo</string>
+        <string name="change_language_button">Cambiar idioma</string>
+        <string name="logout_button">Cerrar Sesión</string>
 
 
 </resources>

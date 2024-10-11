@@ -1,3 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">ProyectoHackathon</string>
+    <string name="clickdgo">ClickDgo</string>
+    <string name="hola_">Hello, Raul</string>
+    <string name="encuentra_l">" Find what you are looking for"</string>
+    <string name="para_t_">For you</string>
+    <string name="descubrir">Discorver</string>
+    <string name="iniciar_ses">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="email_ejemp">Email@ejemplo.com</string>
+    <string name="iniciar_sesion">Login</string>
+    <string name="user_name">Username</string>
+    <string name="membership_type">Platinum</string>
+    <string name="info_title">General information</string>
+    <string name="name_title">Name</string>
+    <string name="val_nom">Raul Gonzales</string>
+    <string name="email_title">Email</string>
+    <string name="val_ema">raulgonzales@gmail.com</string>
+    <string name="compras_title">"Purchases made "</string>
+    <string name="val_compras">33</string>
+    <string name="puntos_title">"Points earned "</string>
+    <string name="val_puntos">88</string>
+    <string name="aportaciones_title">Contributions</string>
+    <string name="val_aporta">120</string>
+    <string name="privacy_button">Privacy</string>
+    <string name="colorblind_button">"Color blindness mode "</string>
+    <string name="change_language_button">Change language</string>
+    <string name="logout_button">Log out</string>
+    <string name="nombreBoton">Bd</string>
 </resources>
