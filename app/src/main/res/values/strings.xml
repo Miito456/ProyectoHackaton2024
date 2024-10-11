@@ -16,9 +16,9 @@
         <string name="membership_type">Platino</string>
         <string name="info_title">Información General</string>
         <string name="name_title">Nombre</string>
-        <string name="val_nom">Raul Gonzales</string>
+        <string name="val_nom">Carolina Alvarado</string>
         <string name="email_title">Email</string>
-        <string name="val_ema">raulgonzales@gmail.com</string>
+        <string name="val_ema">Caro@gmail.com</string>
         <string name="compras_title">Compras realizadas</string>
         <string name="val_compras">33</string>
         <string name="puntos_title">Puntos ganados</string>

@@ -1,10 +1,8 @@
 package com.example.proyectohackathon;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,99 +13,83 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.proyectohackathon.Entidades.Clientes;
 import com.example.proyectohackathon.db.DbHelper;
 import com.example.proyectohackathon.db.dbClientes;
-import com.example.proyectohackathon.db.dbEmpresas;
 import com.example.proyectohackathon.db.dbProductos;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-    Button btnCrear, btnInsert, btnSelect,btnPrincipal;
+    Button btnCrear, btnInsert, btnSelect, btnPrincipal;
+    Button btnIniciar;
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // Inicializa los botones
+        btnIniciar = findViewById(R.id.btnIniciar);
+        btnCrear = findViewById(R.id.btnCrear);
+        btnPrincipal = findViewById(R.id.btnPrincipal);
+
+        // Ajusta los márgenes para el diseño EdgeToEdge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-            //Comentario ejemeplo
-
-
         });
 
+        // Configura el OnClickListener de btnIniciar
+        btnIniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in2 = new Intent(MainActivity.this, LogIn.class);
+                startActivity(in2);
+            }
+        });
+
+        // Llama al método para insertar registros
         Inserts();
-        btnPrincipal = findViewById(R.id.btnPrincipal);
+        Inserts2();
+
+        // Configura el OnClickListener de btnPrincipal
         btnPrincipal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(MainActivity.this,VentanaPrincipal.class);
+                Intent in = new Intent(MainActivity.this, VentanaPrincipal.class);
                 startActivity(in);
             }
         });
-        btnCrear =findViewById(R.id.btnCrear);
 
+        // Configura el OnClickListener de btnCrear
         btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DbHelper dbHelper = new DbHelper(MainActivity.this);
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-                if(db != null){
+                if (db != null) {
                     Toast.makeText(MainActivity.this, "Base de datos creada", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "Error al crear", Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-
-        btnInsert = (Button) findViewById(R.id.btnInsert);
-
-        btnInsert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
-//                dbClientes insert = new dbClientes(MainActivity.this);
-//                Long id = insert.insertarClientes("User", "User", "Prueba Hackaton", 1);
-//                if(id >0){
-//                    Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
-//                }else{
-//                    Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
-//                }
-
-            }
-        });
-
-        btnSelect = (Button) findViewById(R.id.btnSelect);
-
-        btnSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dbClientes select = new dbClientes(MainActivity.this);
-                ArrayList<Clientes> clientes = select.ObtenerClientes();
-                int i= 1;
-                for(Clientes cliente : clientes){
-                    Toast.makeText(MainActivity.this, "Leer", Toast.LENGTH_SHORT).show();
-                    Log.i("Info Tag", ""+i);
-                    Log.i("Info Tag","ID: "+cliente.getIdCliente());
-                    Log.i("Info Tag","User: "+cliente.getUser());
-                    Log.i("Info Tag","Password: "+cliente.getPassword());
-                    Log.i("Info Tag","Nombre: "+cliente.getNivel());
-                    Log.i("Info Tag","Nivel: "+cliente.getNivel());
-                }
-
-            }
-        });
-
-
     }
 
-    public void Inserts(){
+    // Método Inserts para insertar clientes
+//    public void Inserts() {
+//        dbClientes inC1 = new dbClientes(MainActivity.this);
+//        Long id = inC1.insertarClientes("caroalvarado", "Greenbay12", "Caro Alvarado", 1);
+//        if (id > 0) {
+//            Toast.makeText(MainActivity.this, "Registro Guardado", Toast.LENGTH_LONG).show();
+//        } else {
+//            Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
+//        }
+//    }
+
+      public void Inserts(){
         dbProductos inP1 = new dbProductos(MainActivity.this);
-        Long id = inP1.insertarProductos(2,"Barrita Energetica",null,null,30,1,"No");
+        Long id = inP1.insertarProducto("Audifonos","Bods color negro",500);
         if(id >0){
             Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
         }else{
@@ -116,5 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void Inserts2(){
+        dbProductos inP1 = new dbProductos(MainActivity.this);
+        Long id = inP1.insertarProducto("Television","Television 40 pulgadas",7500);
+        if(id >0){
+            Toast.makeText(MainActivity.this, "Registro Guradado", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(MainActivity.this, "Error al guardar", Toast.LENGTH_LONG).show();
+        }
 
+    }
 }
