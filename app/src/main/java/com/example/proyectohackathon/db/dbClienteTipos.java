@@ -37,7 +37,7 @@ public class dbClienteTipos extends DbHelper{
         return id;
     }
 
-    public ArrayList<ClienteTipos> ObtenerClienteTipo{
+    public ArrayList<ClienteTipos> ObtenerClienteTipo(){
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ArrayList<ClienteTipos> listaClienteTipos = new ArrayList<>();
