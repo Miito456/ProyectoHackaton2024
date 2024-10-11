@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login">
+
+    <!-- TextView: ClickDgo -->
+    <TextView
+        android:id="@+id/clickdgo"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
+        android:text="@string/clickdgo"
+        android:textAppearance="@style/clickdgo"
+        android:gravity="top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+    <!-- TextView: Iniciar Sesión -->
+    <TextView
+        android:id="@+id/iniciar_ses"
+        android:layout_width="198dp"
+        android:layout_height="36dp"
+        android:text="@string/iniciar_ses"
+        android:textAppearance="@style/iniciar_ses"
+        android:gravity="top"
+        android:layout_below="@id/clickdgo"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- TextView: Email -->
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="52dp"
+        android:layout_height="24dp"
+        android:text="@string/email"
+        android:textAppearance="@style/email"
+        android:gravity="top"
+        android:layout_below="@id/iniciar_ses"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- TextView: Email Example -->
+    <TextView
+        android:id="@+id/email_ejemp"
+        android:layout_width="141dp"
+        android:layout_height="18dp"
+        android:text="@string/email_ejemp"
+        android:textAppearance="@style/email_ejemp"
+        android:gravity="top"
+        android:layout_below="@id/email"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- RelativeLayout for Button -->
+    <RelativeLayout
+        android:id="@+id/tarjeta_1"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="316dp"
+        android:background="@drawable/tarjeta_1"
+        android:clipToOutline="true">
+
+        <!-- Button TextView inside tarjeta_1 -->
+        <TextView
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iniciar_sesion"
+            android:textAppearance="@style/login_button"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <!-- Icono (cerrar sesión o información adicional) -->
+    <RelativeLayout
+        android:id="@+id/ic_outline_"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:clipToOutline="true"
+        android:background="@drawable/ic_outline" />
+</RelativeLayout>

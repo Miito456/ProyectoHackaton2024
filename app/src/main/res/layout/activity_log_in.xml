@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFEFE">
+
+
+    <View
+        android:id="@+id/rectangle_9"
+        android:layout_width="123dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="822dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_8"
+        android:layout_width="123dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="-80dp"
+        android:layout_marginTop="800dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="123dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_10"
+        android:layout_width="123dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="380dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+    android:src="@drawable/sample_image"
+    android:scaleType="centerCrop"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- También asomándose por la derecha -->
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="16dp"
+        android:text="ClickDgo"
+        android:textColor="#6B705C"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/searchTextView"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="Email"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:gravity="start"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_edittext"/>
+
+    <EditText
+        android:id="@+id/contraseña"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchTextView2"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:gravity="start"
+        android:textColor="#000000"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_edittext"/>
+
+
+    <!-- Etiqueta para el campo de Contraseña -->
+
+
+    <!-- Botón de Iniciar sesión -->
+    <TextView
+        android:id="@+id/searchTextView2"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Contraseña"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email" />
+
+    <RelativeLayout
+        android:id="@+id/tarjeta_1"
+        android:layout_width="348dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/tarjeta_1"
+        android:clipToOutline="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contraseña"
+        app:layout_constraintVertical_bias="0.1">
+
+        <!-- TextView como botón de "Iniciar sesión" -->
+        <TextView
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/iniciar_sesion"
+            android:textAppearance="@style/login_button"
+            android:textColor="#000"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/searchTextView4"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="396dp"
+        android:text="¿Todavía no tienes cuenta?"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <TextView
+        android:id="@+id/searchTextView5"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="420dp"
+        android:text="Crear cuenta"
+        android:textAlignment="center"
+        android:textColor="#9AB092"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <TextView
+        android:id="@+id/searchTextView7"
+        android:layout_width="217dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="472dp"
+        android:text="¿Olvidaste la contraseña?"
+        android:textAlignment="center"
+        android:textColor="#9AB092"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
